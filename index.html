@@ -2,338 +2,290 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Anisha Mohapatra – Portfolio</title>
+  <title>Anisha Mohapatra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       line-height: 1.6;
-      background: var(--bg);
-      color: var(--text-main);
+      background: #ffffff;
+      color: #111827;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* THEMES */
-
-    body.theme-light {
-      --bg: #f9fafb;
-      --bg-card: #ffffff;
-      --border: #e5e7eb;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --nav-bg: #020617;
-      --nav-text: #e5e7eb;
-      --nav-muted: #9ca3af;
+    a {
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    body.theme-dark {
-      --bg: #020617;
-      --bg-card: #020617;
-      --border: #1f2937;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --accent: #38bdf8;
-      --accent-soft: #1d4ed8;
-      --nav-bg: #020617;
-      --nav-text: #e5e7eb;
-      --nav-muted: #9ca3af;
+    a:hover {
+      text-decoration: underline;
     }
 
-    /* TOP NAV */
+    /* Top link bar similar to Jon Barron / Ishita site */
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(2, 6, 23, 0.96);
-      color: var(--nav-text);
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(8px);
+    .top-nav {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.75rem 0;
+      margin-bottom: 1rem;
     }
 
-    .nav-inner {
-      max-width: 900px;
+    .top-nav-inner {
+      max-width: 850px;
       margin: 0 auto;
-      padding: 0.6rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-left {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .site-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .site-subtitle {
-      margin: 0;
-      font-size: 0.8rem;
-      color: var(--nav-muted);
-    }
-
-    .nav-links {
+      padding: 0 1.25rem;
+      font-size: 0.95rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      font-size: 0.85rem;
     }
 
-    .nav-links a {
-      color: var(--nav-text);
-      text-decoration: none;
-    }
-    .nav-links a:hover { color: var(--accent); }
-
-    .nav-right {
-      font-size: 0.8rem;
-      color: var(--nav-muted);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.15rem;
-      text-align: right;
+    .top-nav-inner a {
+      color: #111827;
     }
 
-    .nav-right a { color: #bfdbfe; }
-
-    .btn-cv {
-      display: inline-block;
-      margin-top: 0.2rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      background: transparent;
-      color: var(--nav-text);
-      font-size: 0.75rem;
+    .top-nav-inner a:hover {
+      color: #2563eb;
     }
 
-    .btn-cv:hover { background: #111827; }
-
-    .theme-toggle {
-      margin-top: 0.25rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      background: transparent;
-      color: var(--nav-text);
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-
-    .theme-toggle:hover { background: #111827; }
-
-    @media (max-width: 800px) {
-      .nav-inner { flex-direction: column; align-items: flex-start; }
-      .nav-right { align-items: flex-start; text-align: left; }
-    }
-
-    /* PAGE LAYOUT */
+    /* Page container */
 
     .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.8rem 1.25rem 2.5rem;
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      padding: 0 1.25rem;
     }
 
-    section { margin-bottom: 2.75rem; }
-
-    h1, h2, h3 { font-weight: 600; margin: 0; }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.25rem;
-    }
-
-    h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
-
-    .muted { color: var(--text-muted); }
-
-    .pill-row { margin-top: 0.5rem; }
-    .pill {
-      display: inline-block;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #e5e7eb;
-      font-size: 0.8rem;
-      margin: 0.15rem;
-    }
-    body.theme-light .pill { color: #1e3a8a; }
-
-    .news-list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.9rem;
-    }
-    .news-item { margin-bottom: 0.4rem; }
-    .news-date { font-weight: 600; margin-right: 0.35rem; }
-
-    .entry-list {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .entry {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 2.3fr);
-      gap: 1rem;
-      align-items: flex-start;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .entry:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .entry-media {
-      max-width: 220px;
-    }
-
-    .media-placeholder {
-      border-radius: 0.75rem;
-      border: 1px dashed var(--border);
-      background: rgba(15, 23, 42, 0.04);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      padding: 0.6rem;
-      text-align: center;
-    }
-
-    .entry-media img,
-    .entry-media video {
-      max-width: 100%;
-      border-radius: 0.75rem;
-      display: block;
-    }
-
-    .entry-title {
-      font-size: 0.98rem;
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.8rem;
       font-weight: 600;
     }
 
-    .entry-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.25rem;
     }
 
-    .entry-body ul {
+    h3 {
+      font-size: 1.02rem;
+      margin: 0.2rem 0 0.2rem;
+      font-weight: 600;
+    }
+
+    .muted {
+      color: #6b7280;
+    }
+
+    /* Intro block */
+
+    .intro {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .intro-photo {
+      flex: 0 0 130px;
+    }
+
+    .intro-photo img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+    }
+
+    .links-line {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .links-line a {
+      margin-right: 0.6rem;
+    }
+
+    @media (max-width: 650px) {
+      .intro {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .intro-photo img {
+        width: 110px;
+        height: 110px;
+      }
+    }
+
+    /* Generic “item with optional image/logo on left” layout */
+
+    .item {
+      margin-bottom: 1.4rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .item-media {
+      flex: 0 0 95px;
+      max-width: 95px;
+    }
+
+    .item-media img {
+      width: 95px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .item-media-placeholder {
+      width: 95px;
+      height: 70px;
+      border: 1px dashed #d1d5db;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.2rem;
+    }
+
+    .item-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .item-meta {
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    .item-tags {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.2rem;
+    }
+
+    .item ul {
+      margin: 0.35rem 0 0;
       padding-left: 1.1rem;
-      margin: 0.25rem 0 0;
       font-size: 0.9rem;
     }
 
-    .entry-links {
+    .item-link {
+      display: inline-block;
       margin-top: 0.35rem;
       font-size: 0.85rem;
-    }
-
-    .entry-link {
-      display: inline-block;
-      padding: 0.15rem 0.55rem;
+      padding: 0.1rem 0.5rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
-      background: transparent;
-      font-size: 0.8rem;
+      border: 1px solid #e5e7eb;
+      color: #111827;
     }
 
-    .entry-link:hover {
-      background: var(--accent-soft);
-      color: #e5e7eb;
+    .item-link:hover {
+      background: #e5e7eb;
+      text-decoration: none;
     }
-    body.theme-light .entry-link:hover { color: #111827; }
 
-    .two-col-list {
+    /* Two-column bullet list */
+
+    .two-col {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 0.5rem 1.5rem;
+      gap: 0.3rem 1.5rem;
       padding-left: 1rem;
       font-size: 0.9rem;
     }
 
-    .two-col-list li { margin-bottom: 0.15rem; }
+    .two-col li {
+      margin-bottom: 0.1rem;
+    }
 
-    @media (max-width: 800px) {
-      .entry {
+    @media (max-width: 700px) {
+      .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
-      .entry-media { max-width: 100%; }
-      .two-col-list { grid-template-columns: minmax(0, 1fr); }
     }
   </style>
 </head>
-<body class="theme-dark">
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="nav-left">
-        <p class="site-title">Anisha Mohapatra</p>
-        <p class="site-subtitle">Mechanical Engineer · Robotics &amp; Controls</p>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#news">News</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#coursework">Coursework</a>
-          <a href="#skills">Skills</a>
-          <a href="#leadership">Leadership</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="nav-right">
-        <div><a href="mailto:anishamohapatra141001@gmail.com">anishamohapatra141001@gmail.com</a></div>
-        <div>GitHub: <a href="https://github.com/Anishamohapatra6" target="_blank">Anishamohapatra6</a></div>
-        <div>LinkedIn: <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank">linkedin.com/in/anisha-mohapatra-8ba264178</a></div>
-        <a class="btn-cv" href="ANISHA MOHAPATRA_Resume_HE.pdf" target="_blank">Download CV (PDF)</a>
-        <button id="theme-toggle" class="theme-toggle" type="button">🌙 Dark mode</button>
-      </div>
+
+<body>
+  <!-- Top text navigation, like the reference site -->
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects &amp; research</a>
+      <a href="#education">Education</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#skills">Skills</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
+  </div>
 
   <main class="page">
-    <!-- ABOUT -->
+    <!-- Intro (photo + about) -->
     <section id="about">
-      <h2>About</h2>
-      <p>
-        I am a Mechanical Engineering undergraduate at the National Institute of Technology Rourkela
-        (Honours, CGPA 8.43/10), with experience spanning robotics research, optimisation for Urban Air
-        Mobility (UAM), and industrial automation. My recent work includes developing optimisation frameworks
-        for UAM and eVTOL operations and leading Industry 4.0 sensor integration projects in manufacturing.
-      </p>
-      <p>
-        My interests lie in robotics, control systems, and mechatronics, particularly in applying rigorous
-        modelling and optimisation techniques to real-world systems. I aim to pursue graduate studies (M.S./Ph.D.)
-        in robotics and controls, working at the intersection of algorithms and hardware.
-      </p>
+      <div class="intro">
+        <div class="intro-text">
+          <h1>Anisha Mohapatra</h1>
+          <p>
+            I am a Mechanical Engineering undergraduate at the National Institute of Technology Rourkela
+            (Honours, CGPA 8.43/10), with experience spanning robotics research, optimisation for Urban Air
+            Mobility (UAM), and industrial automation. Recent work includes developing optimisation frameworks
+            for UAM and eVTOL operations and leading Industry 4.0 sensor integration projects in manufacturing.
+          </p>
+          <p>
+            My interests lie in robotics, control systems, mechatronics, and optimisation. I ultimately hope to
+            pursue graduate studies (M.S./Ph.D.) in robotics and controls and work at the intersection of
+            algorithm design and real-world hardware.
+          </p>
+          <p class="links-line">
+            <a href="mailto:anishamohapatra141001@gmail.com">Email</a> /
+            <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank">LinkedIn</a> /
+            <a href="https://github.com/Anishamohapatra6" target="_blank">GitHub</a> /
+            <a href="ANISHA MOHAPATRA_Resume_HE.pdf" target="_blank">CV (PDF)</a>
+          </p>
+        </div>
+
+        <div class="intro-photo">
+          <!-- IMPORTANT: upload your photo as "profile.jpg" in this repo
+               or change the filename below to match your image. -->
+          <img src="profile.jpg" alt="Anisha Mohapatra photo" />
+        </div>
+      </div>
     </section>
 
     <!-- NEWS -->
     <section id="news">
       <h2>News</h2>
-      <ul class="news-list">
-        <li class="news-item"><span class="news-date">May 2025</span>Joined the Artificial Intelligence &amp; Robotics Lab at IISc Bangalore as a Research Project Associate.</li>
-        <li class="news-item"><span class="news-date">Jul 2024</span>Started as Assistant Engineering Manager at ITC Limited, working on Industry 4.0 sensor integration.</li>
-        <li class="news-item"><span class="news-date">Apr 2024</span>Team QO9D recognised as overall 2nd Runners-up in the Ohm Challenge on EV battery technology (Bajaj Auto &amp; Chetak Technology).</li>
-        <li class="news-item"><span class="news-date">Mar 2023</span>Team BlueStreak 10.0 awarded National Runners-up at ASME Hybrid HPV Challenge (EFx 2023) for the CDR presentation.</li>
-        <li class="news-item"><span class="news-date">Mar 2022</span>Led Team AB1214 to International 2nd Runners-up position in the Agribot theme at e-Yantra Robotics Competition, IIT Bombay.</li>
+      <p class="muted">Selected updates.</p>
+      <ul>
+        <li><strong>May 2025</strong> – Joined the Artificial Intelligence &amp; Robotics Lab at IISc Bangalore as a Research Project Associate.</li>
+        <li><strong>Jul 2024</strong> – Started as Assistant Engineering Manager at ITC Limited, working on Industry 4.0 sensor integration.</li>
+        <li><strong>Apr 2024</strong> – Team QO9D recognised as overall 2nd Runners-up in the Ohm Challenge on EV battery technology (Bajaj Auto &amp; Chetak Technology).</li>
+        <li><strong>Mar 2023</strong> – Team BlueStreak 10.0 awarded National Runners-up at ASME Hybrid HPV Challenge (EFx 2023) for the CDR presentation.</li>
+        <li><strong>Mar 2022</strong> – Led Team AB1214 to International 2nd Runners-up position in the Agribot theme at e-Yantra Robotics Competition, IIT Bombay.</li>
       </ul>
     </section>
 
@@ -342,224 +294,205 @@
       <h2>Publications</h2>
       <p>
         Formal publications are currently in preparation based on ongoing work in
-        <em>Urban Air Mobility traffic management</em> and <em>aerial robotics navigation with 3D Gaussian Splatting</em>.
+        <em>Urban Air Mobility traffic management</em> and
+        <em>aerial robotics navigation with 3D Gaussian Splatting</em>.
       </p>
+      <!-- Later you can replace this with a numbered list of papers. -->
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience">
       <h2>Industry &amp; research experience</h2>
-      <div class="entry-list">
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">
-              Upload a IISc / lab logo image here later and replace this box with:<br>
-              <code>&lt;img src="images/iisc.png" alt="IISc AI &amp; Robotics Lab"&gt;</code>
-            </div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Research Project Associate · Artificial Intelligence &amp; Robotics Lab, IISc Bangalore</div>
-            <div class="entry-meta">May 2025 – Present · Supervisor: Prof. Suresh Sundaram</div>
-            <ul>
-              <li>Developing an Urban Traffic Management framework for UAM and eVTOL operations using MILP/ILP models in Python and Gurobi.</li>
-              <li>Optimising vertiport siting, layouts, and airspace sectorisation to support high-density operations with multi-ring control zones.</li>
-              <li>Exploring 3D Gaussian Splatting techniques for aerial robotics navigation and real-time mapping.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">
-              Logo / plant photo for ITC can go here later.
-            </div>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">
+            IISc / lab logo<br>image here
           </div>
-          <div class="entry-body">
-            <div class="entry-title">Assistant Engineering Manager · ITC Limited</div>
-            <div class="entry-meta">Jul 2024 – Apr 2025</div>
-            <ul>
-              <li>Led integration of vibration, temperature, flow, and vision sensors across production stations for real-time monitoring via SCADA.</li>
-              <li>Implemented alarms and feedback control loops, improving throughput/OEE and reducing unplanned downtime.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
+        </div>
+        <div class="item-body">
+          <h3>Research Project Associate – AI &amp; Robotics Lab, IISc Bangalore</h3>
+          <div class="item-meta">May 2025 – Present · Supervisor: Prof. Suresh Sundaram</div>
+          <ul>
+            <li>Developing an Urban Traffic Management framework for UAM and eVTOL operations using MILP/ILP models in Python and Gurobi.</li>
+            <li>Optimising vertiport siting, layouts, and airspace sectorisation to support high-density operations with multi-ring control zones.</li>
+            <li>Exploring 3D Gaussian Splatting techniques for aerial robotics navigation and real-time mapping.</li>
+          </ul>
+          <div class="item-tags">Keywords: optimisation, UAM, trajectory planning, Python, Gurobi</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
+      </div>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">IIT Bhubaneswar lab / exoskeleton image placeholder.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Robotics Research Intern · AI &amp; Mechatronics Lab, IIT Bhubaneswar</div>
-            <div class="entry-meta">Dec 2023 – Jan 2024</div>
-            <ul>
-              <li>Modelled an upper-limb exoskeleton in MATLAB and Simscape, focusing on kinematics, dynamics, and trajectory planning.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">ITC plant / sensor photo here</div>
+        </div>
+        <div class="item-body">
+          <h3>Assistant Engineering Manager – ITC Limited</h3>
+          <div class="item-meta">Jul 2024 – Apr 2025</div>
+          <ul>
+            <li>Led integration of vibration, temperature, flow, and vision sensors across production stations for real-time monitoring via SCADA.</li>
+            <li>Implemented alarms and feedback loops, improving throughput/OEE and reducing unplanned downtime.</li>
+          </ul>
+          <div class="item-tags">Keywords: Industry 4.0, sensors, SCADA, automation</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
+      </div>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">Bajaj Auto / PID test-rig photo placeholder.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Octane R&amp;D Intern · Bajaj Auto Ltd, Pune</div>
-            <div class="entry-meta">May 2023 – Jul 2023</div>
-            <ul>
-              <li>Developed a Python-based mathematical model for Particle Impact Dampers capturing particle–surface interactions and key design parameters.</li>
-              <li>Analysed parameter variations and identified configurations yielding improved vibration attenuation.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">IIT Bhubaneswar lab photo</div>
+        </div>
+        <div class="item-body">
+          <h3>Robotics Research Intern – AI &amp; Mechatronics Lab, IIT Bhubaneswar</h3>
+          <div class="item-meta">Dec 2023 – Jan 2024</div>
+          <ul>
+            <li>Modelled an upper-limb exoskeleton in MATLAB and Simscape, focusing on kinematics, dynamics, and trajectory planning.</li>
+          </ul>
+          <div class="item-tags">MATLAB, Simscape, exoskeletons</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
+      </div>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">e-Yantra / ventilation design image placeholder.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">eYSIP Research Intern · e-Yantra Lab, IIT Bombay (Remote)</div>
-            <div class="entry-meta">May 2022 – Jun 2022</div>
-            <ul>
-              <li>Designed laser-cuttable ventilation assemblies in SolidWorks/AutoCAD and performed CFD-based airflow analyses using ANSYS and OpenFOAM.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">Bajaj R&amp;D logo / test-rig</div>
+        </div>
+        <div class="item-body">
+          <h3>Octane R&amp;D Intern – Bajaj Auto Ltd, Pune</h3>
+          <div class="item-meta">May 2023 – Jul 2023</div>
+          <ul>
+            <li>Developed a Python-based mathematical model for Particle Impact Dampers capturing particle–surface interactions and key design parameters.</li>
+            <li>Analysed parameter variations and identified configurations yielding improved vibration attenuation.</li>
+          </ul>
+          <div class="item-tags">vibrations, PID, Python, modelling</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">e-Yantra / ventilation design image</div>
+        </div>
+        <div class="item-body">
+          <h3>eYSIP Research Intern – e-Yantra Lab, IIT Bombay (remote)</h3>
+          <div class="item-meta">May 2022 – Jun 2022</div>
+          <ul>
+            <li>Designed laser-cuttable ventilation assemblies in SolidWorks/AutoCAD and performed CFD-based airflow analyses using ANSYS and OpenFOAM.</li>
+          </ul>
+          <div class="item-tags">CFD, SolidWorks, OpenFOAM, ventilation design</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS & RESEARCH -->
     <section id="projects">
       <h2>Projects &amp; research</h2>
-      <div class="entry-list">
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">
-              AUV simulation / geometry figure can go here later.
-            </div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Undergraduate Thesis · Dynamics of Autonomous Underwater Vehicles</div>
-            <div class="entry-meta">Aug 2023 – May 2024 · NIT Rourkela · Supervisor: Prof. Hara Prasad Roy</div>
-            <ul>
-              <li>Developed coupled ANSYS and MATLAB/Simulink models for 6-DOF AUV hydrodynamics including added mass, drag, buoyancy, and actuator dynamics.</li>
-              <li>Studied the effect of varying ocean currents on AUV trajectory and control performance along lateral and vertical axes.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">Project report / code</a>
-            </div>
-          </div>
-        </article>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">
-              BlueStreak vehicle / drivetrain CAD image placeholder.
-            </div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Hybrid Drivetrain Design &amp; Analysis · Team BlueStreak, NIT Rourkela</div>
-            <div class="entry-meta">2021 – 2023</div>
-            <ul>
-              <li>Designed and manufactured drivetrain components for a tadpole trike, using ANSYS structural analysis to validate gear and crankset performance.</li>
-              <li>Built a MATLAB/Simulink electro-mechanical powertrain model for drive-cycle analysis, battery sizing, and SOC estimation.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">View details</a>
-            </div>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">AUV simulation / geometry figure</div>
+        </div>
+        <div class="item-body">
+          <h3>Undergraduate Thesis – Dynamics of Autonomous Underwater Vehicles</h3>
+          <div class="item-meta">Aug 2023 – May 2024 · NIT Rourkela · Supervisor: Prof. Hara Prasad Roy</div>
+          <ul>
+            <li>Developed coupled ANSYS and MATLAB/Simulink models for 6-DOF AUV hydrodynamics including added mass, drag, buoyancy, and actuator dynamics.</li>
+            <li>Studied the effect of varying ocean currents on AUV trajectory and control performance along lateral and vertical axes.</li>
+          </ul>
+          <div class="item-tags">AUVs, hydrodynamics, Simulink, ANSYS</div>
+          <a class="item-link" href="#" target="_blank">Project report / code</a>
+        </div>
+      </div>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">
-              Agribot photos, ROS RViz screenshots, or videos can be placed here.
-            </div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Autonomous Navigation &amp; Manipulation of AgriBot · e-Yantra Robotics Challenge</div>
-            <div class="entry-meta">2021 – 2022 · Team AB1214</div>
-            <ul>
-              <li>Developed ROS1-based software stacks for navigation, control, and manipulation on the IITB Greenhouse Agribot platform.</li>
-              <li>Integrated OpenCV perception and teleoperation for remote monitoring and greenhouse task execution.</li>
-            </ul>
-            <div class="entry-links">
-              <a class="entry-link" href="#" target="_blank">Video / slides</a>
-            </div>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">BlueStreak chassis / drivetrain photo</div>
+        </div>
+        <div class="item-body">
+          <h3>Hybrid Drivetrain Design &amp; Analysis – Team BlueStreak, NIT Rourkela</h3>
+          <div class="item-meta">2021 – 2023</div>
+          <ul>
+            <li>Designed and manufactured drivetrain components for a tadpole trike, using ANSYS structural analysis to validate gear and crankset performance.</li>
+            <li>Built a MATLAB/Simulink electro-mechanical powertrain model for drive-cycle analysis, battery sizing, and SOC estimation.</li>
+          </ul>
+          <div class="item-tags">drivetrain, ANSYS, Simulink, EV modelling</div>
+          <a class="item-link" href="#" target="_blank">View details</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">e-Yantra Agribot photos / ROS screenshots</div>
+        </div>
+        <div class="item-body">
+          <h3>Autonomous Navigation &amp; Manipulation of AgriBot – e-Yantra Robotics Challenge</h3>
+          <div class="item-meta">2021 – 2022 · Team AB1214</div>
+          <ul>
+            <li>Developed ROS1-based software stacks for navigation, control, and manipulation on the IITB Greenhouse Agribot platform.</li>
+            <li>Integrated OpenCV perception and teleoperation for remote monitoring and greenhouse task execution.</li>
+          </ul>
+          <div class="item-tags">ROS, perception, mobile manipulation, OpenCV</div>
+          <a class="item-link" href="#" target="_blank">Video / slides</a>
+        </div>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section id="education">
       <h2>Education</h2>
-      <p><strong>National Institute of Technology Rourkela</strong> – B.Tech in Mechanical Engineering (Honours), 2020–2024 · CGPA: 8.43/10</p>
-      <p class="muted">Undergraduate thesis on dynamics of autonomous underwater vehicles; active involvement in ASME NITR and student robotics teams.</p>
+      <p>
+        <strong>National Institute of Technology Rourkela</strong> – B.Tech in Mechanical Engineering (Honours), 2020–2024 · CGPA 8.43/10.
+      </p>
+      <p class="muted">
+        Undergraduate thesis on dynamics of autonomous underwater vehicles; leadership roles in ASME NITR and student robotics teams.
+      </p>
     </section>
 
     <!-- COURSEWORK -->
     <section id="coursework">
       <h2>Coursework</h2>
-      <p class="muted">
-        Key undergraduate courses grouped by theme, with brief descriptions.
-      </p>
+      <p class="muted">Selected courses, grouped by theme.</p>
 
       <h3>Robotics, control &amp; dynamics</h3>
       <ul>
-        <li><strong>System Dynamics and Control</strong> – modelling and analysis of linear dynamical systems; time and frequency response; feedback control design.</li>
-        <li><strong>Mechanical Vibrations</strong> – single and multi-degree-of-freedom vibration analysis, damping models, and vibration isolation.</li>
-        <li><strong>Mechatronics</strong> – sensors, actuators, microcontrollers, and interfacing for electro-mechanical systems.</li>
-        <li><strong>Robotics (elective)</strong> – kinematics, Jacobians, trajectory planning, and introduction to robot control.</li>
+        <li><strong>System Dynamics and Control</strong> – modelling and analysis of linear dynamical systems; feedback control design.</li>
+        <li><strong>Mechanical Vibrations</strong> – single and multi-DOF vibration analysis, damping models, isolation.</li>
+        <li><strong>Mechatronics</strong> – sensors, actuators, microcontrollers, real-time interfacing.</li>
+        <li><strong>Robotics (elective)</strong> – kinematics, Jacobians, trajectory planning, basic control.</li>
       </ul>
 
       <h3>Solid &amp; fluid mechanics, thermal sciences</h3>
       <ul>
-        <li><strong>Engineering Mechanics &amp; Strength of Materials</strong> – statics, stresses and strains, bending, torsion, and deflection.</li>
-        <li><strong>Fluid Mechanics</strong> – control-volume analysis, incompressible flows, pipe and channel flows.</li>
-        <li><strong>Thermodynamics</strong> – first and second laws, power and refrigeration cycles.</li>
-        <li><strong>Heat Transfer</strong> – conduction, convection, radiation, and heat exchanger design.</li>
+        <li><strong>Engineering Mechanics &amp; Strength of Materials</strong> – statics, stresses and strains, bending, torsion.</li>
+        <li><strong>Fluid Mechanics</strong> – incompressible flows, pipe and channel flows.</li>
+        <li><strong>Thermodynamics</strong> – power and refrigeration cycles, first and second laws.</li>
+        <li><strong>Heat Transfer</strong> – conduction, convection, radiation, heat exchanger design.</li>
       </ul>
 
       <h3>Design, manufacturing &amp; computation</h3>
       <ul>
-        <li><strong>Design of Machine Elements</strong> – design of shafts, gears, springs, and bolted joints under fatigue and static loading.</li>
+        <li><strong>Design of Machine Elements</strong> – design of shafts, gears, springs, bolted joints under static/fatigue loading.</li>
         <li><strong>Manufacturing Technology</strong> – metal cutting, forming, casting, and joining processes.</li>
-        <li><strong>Finite Element Methods</strong> – basics of FEM formulation and applications to structural problems.</li>
-        <li><strong>Numerical Methods</strong> – root finding, interpolation, numerical differentiation/integration, and ODE solving.</li>
+        <li><strong>Finite Element Methods</strong> – basic FEM formulation and structural applications.</li>
+        <li><strong>Numerical Methods</strong> – root finding, interpolation, numerical integration, ODE solving.</li>
       </ul>
-
-      <p class="muted">
-        Full transcript and detailed grades are available on request.
-      </p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills">
       <h2>Skills</h2>
       <h3>Programming &amp; software</h3>
-      <ul class="two-col-list">
+      <ul class="two-col">
         <li>Python</li>
         <li>C / C++</li>
         <li>MATLAB &amp; Simulink</li>
-        <li>HTML / CSS</li>
         <li>ROS, Webots</li>
-        <li>Linux &amp; Windows</li>
         <li>ANSYS, OpenFOAM</li>
         <li>SolidWorks, AutoCAD</li>
+        <li>HTML / CSS</li>
+        <li>Linux &amp; Windows</li>
       </ul>
 
       <h3>Additional</h3>
@@ -571,47 +504,46 @@
 
     <!-- LEADERSHIP -->
     <section id="leadership">
-      <h2>Leadership &amp; volunteering</h2>
-      <div class="entry-list">
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">ASME NITR event photo / logo.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Vice President · ASME NIT Rourkela Chapter</div>
-            <div class="entry-meta">2022 – 2023</div>
-            <ul>
-              <li>Led a diverse team of 50+ students, coordinating projects and national-level events.</li>
-              <li>During this tenure, the chapter received the ASME India Outstanding Community Engagement Award.</li>
-            </ul>
-          </div>
-        </article>
+      <h2>Leadership &amp; mentoring</h2>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">Mentoring / ICS poster placeholder.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Student Mentor · Institute Counselling Services, NIT Rourkela</div>
-            <div class="entry-meta">2022 – 2023</div>
-            <ul>
-              <li>Mentored first-year students on academic planning, mental well-being, and adapting to campus life.</li>
-            </ul>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">ASME NITR logo / event photo</div>
+        </div>
+        <div class="item-body">
+          <h3>Vice President – ASME NIT Rourkela Chapter</h3>
+          <div class="item-meta">2022 – 2023</div>
+          <ul>
+            <li>Led a diverse team of 50+ students, coordinating technical projects and national-level events.</li>
+            <li>Chapter received the ASME India Outstanding Community Engagement Award during this tenure.</li>
+          </ul>
+        </div>
+      </div>
 
-        <article class="entry">
-          <div class="entry-media">
-            <div class="media-placeholder">E-Cell event / NES summit photo placeholder.</div>
-          </div>
-          <div class="entry-body">
-            <div class="entry-title">Treasurer · Entrepreneurship Cell, NIT Rourkela</div>
-            <div class="entry-meta">2020 – 2023</div>
-            <ul>
-              <li>Managed budgets and funding for events including the National Entrepreneurship Summit.</li>
-            </ul>
-          </div>
-        </article>
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">ICS mentoring poster</div>
+        </div>
+        <div class="item-body">
+          <h3>Student Mentor – Institute Counselling Services, NIT Rourkela</h3>
+          <div class="item-meta">2022 – 2023</div>
+          <ul>
+            <li>Mentored first-year students on academics, mental well-being, and adapting to campus life.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-media">
+          <div class="item-media-placeholder">E-Cell / NES Summit photo</div>
+        </div>
+        <div class="item-body">
+          <h3>Treasurer – Entrepreneurship Cell, NIT Rourkela</h3>
+          <div class="item-meta">2020 – 2023</div>
+          <ul>
+            <li>Managed budgets and funding for events including the National Entrepreneurship Summit.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -624,34 +556,5 @@
       </p>
     </section>
   </main>
-
-  <script>
-    // THEME TOGGLE
-    const body = document.body;
-    const btn = document.getElementById("theme-toggle");
-
-    function setTheme(theme) {
-      body.classList.remove("theme-light", "theme-dark");
-      body.classList.add(theme);
-      localStorage.setItem("theme", theme);
-      btn.textContent = theme === "theme-dark" ? "🌙 Dark mode" : "☀️ Light mode";
-    }
-
-    (function initTheme() {
-      const saved = localStorage.getItem("theme");
-      if (saved === "theme-light" || saved === "theme-dark") {
-        setTheme(saved);
-      } else {
-        const prefersDark = window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(prefersDark ? "theme-dark" : "theme-light");
-      }
-    })();
-
-    btn.addEventListener("click", () => {
-      const current = body.classList.contains("theme-dark") ? "theme-dark" : "theme-light";
-      setTheme(current === "theme-dark" ? "theme-light" : "theme-dark");
-    });
-  </script>
 </body>
 </html>
