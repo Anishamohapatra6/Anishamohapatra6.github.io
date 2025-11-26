@@ -5,19 +5,6 @@
   <title>Anisha Mohapatra – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #f3f4f6;
-      --bg-card: #ffffff;
-      --border: #e5e7eb;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --nav-bg: #020617;
-      --nav-text: #e5e7eb;
-      --max-width: 900px;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -25,9 +12,10 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      /* CSS variables will be set per theme on body */
       background: var(--bg);
       color: var(--text-main);
-      line-height: 1.6;
     }
 
     a {
@@ -39,7 +27,35 @@
       text-decoration: underline;
     }
 
-    /* Top navigation */
+    /* THEME DEFINITIONS */
+
+    body.theme-light {
+      --bg: #f9fafb;
+      --bg-card: #ffffff;
+      --border: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --nav-bg: #020617;
+      --nav-text: #e5e7eb;
+      --nav-muted: #9ca3af;
+    }
+
+    body.theme-dark {
+      --bg: #020617;
+      --bg-card: #020617;
+      --border: #1f2937;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-soft: #1d4ed8;
+      --nav-bg: #020617;
+      --nav-text: #e5e7eb;
+      --nav-muted: #9ca3af;
+    }
+
+    /* HEADER / NAV */
 
     .site-header {
       position: sticky;
@@ -48,10 +64,11 @@
       background: rgba(2, 6, 23, 0.96);
       color: var(--nav-text);
       box-shadow: 0 1px 3px rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(8px);
     }
 
     .nav-inner {
-      max-width: var(--max-width);
+      max-width: 900px;
       margin: 0 auto;
       padding: 0.6rem 1.25rem;
       display: flex;
@@ -74,7 +91,7 @@
     .site-subtitle {
       margin: 0;
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--nav-muted);
     }
 
     .nav-links {
@@ -82,6 +99,7 @@
       gap: 0.75rem;
       flex-wrap: wrap;
       font-size: 0.85rem;
+      margin-top: 0.25rem;
     }
 
     .nav-links a {
@@ -90,22 +108,26 @@
     }
 
     .nav-links a:hover {
-      color: var(--accent-soft);
+      color: var(--accent);
     }
 
-    .nav-contact {
-      font-size: 0.8rem;
-      color: #9ca3af;
+    .nav-right {
       text-align: right;
+      font-size: 0.8rem;
+      color: var(--nav-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.15rem;
     }
 
-    .nav-contact a {
+    .nav-right a {
       color: #bfdbfe;
     }
 
     .btn-cv {
       display: inline-block;
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
       padding: 0.3rem 0.8rem;
       border-radius: 999px;
       border: 1px solid #374151;
@@ -119,21 +141,37 @@
       background: #111827;
     }
 
+    .theme-toggle {
+      margin-top: 0.25rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: transparent;
+      color: var(--nav-text);
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      background: #111827;
+    }
+
     @media (max-width: 800px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .nav-contact {
+      .nav-right {
+        align-items: flex-start;
         text-align: left;
       }
     }
 
-    /* Page layout */
+    /* PAGE LAYOUT */
 
     .page {
-      max-width: var(--max-width);
+      max-width: 900px;
       margin: 0 auto;
       padding: 1.8rem 1.25rem 2.5rem;
     }
@@ -172,9 +210,13 @@
       padding: 0.15rem 0.6rem;
       border-radius: 999px;
       background: var(--accent-soft);
-      color: #1e3a8a;
+      color: #e5e7eb;
       font-size: 0.8rem;
       margin: 0.15rem;
+    }
+
+    body.theme-light .pill {
+      color: #1e3a8a;
     }
 
     .card-list {
@@ -248,7 +290,7 @@
       }
     }
 
-    /* Project layout with future images */
+    /* PROJECT LAYOUT (SPACE FOR MEDIA) */
 
     .project-flex {
       display: grid;
@@ -257,14 +299,10 @@
       align-items: flex-start;
     }
 
-    .project-text ul {
-      margin-top: 0.3rem;
-    }
-
     .project-media {
       border-radius: 0.75rem;
       border: 1px dashed var(--border);
-      background: #f9fafb;
+      background: rgba(15, 23, 42, 0.02);
       padding: 0.6rem;
       font-size: 0.8rem;
       color: var(--text-muted);
@@ -286,8 +324,8 @@
     }
   </style>
 </head>
-<body>
-  <!-- Top nav bar -->
+<body class="theme-dark">
+  <!-- TOP NAV BAR -->
   <header class="site-header">
     <div class="nav-inner">
       <div class="nav-left">
@@ -306,13 +344,12 @@
           <a href="#contact">Contact</a>
         </nav>
       </div>
-      <div class="nav-contact">
+      <div class="nav-right">
         <div><a href="mailto:anishamohapatra141001@gmail.com">anishamohapatra141001@gmail.com</a></div>
         <div>GitHub: <a href="https://github.com/Anishamohapatra6" target="_blank">Anishamohapatra6</a></div>
-        <!-- TODO: replace # with your real LinkedIn URL -->
-        <div>LinkedIn: <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank">linkedin.com/in/anishamohapatra</a></div>
-        <!-- Make sure the PDF with this name is uploaded in the repo root -->
+        <div>LinkedIn: <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank">linkedin.com/in/anisha-mohapatra-8ba264178</a></div>
         <a class="btn-cv" href="ANISHA MOHAPATRA_Resume_HE.pdf" target="_blank">Download CV (PDF)</a>
+        <button id="theme-toggle" class="theme-toggle" type="button">🌙 Dark mode</button>
       </div>
     </div>
   </header>
@@ -323,7 +360,7 @@
       <h2>About</h2>
       <p>
         I am a Mechanical Engineering undergraduate at the National Institute of Technology Rourkela
-        (Honours, CGPA 8.43/10), with experience spanning robotics research, optimisation for Urban Air
+        , with experience spanning robotics research, optimisation for Urban Air
         Mobility (UAM), and industrial automation. My recent work includes developing optimisation frameworks
         for UAM and eVTOL operations and leading Industry 4.0 sensor integration projects in manufacturing.
       </p>
@@ -408,13 +445,13 @@
       </div>
     </section>
 
-    <!-- PROJECTS: ROOM FOR PHOTOS/VIDEOS -->
+    <!-- PROJECTS -->
     <section id="projects">
       <h2>Research &amp; selected projects</h2>
       <div class="card-list">
         <article class="card">
           <div class="project-flex">
-            <div class="project-text">
+            <div>
               <div class="card-header">
                 <div>Undergraduate Thesis · Dynamics of Autonomous Underwater Vehicles</div>
                 <div>Aug 2023 – May 2024</div>
@@ -426,16 +463,14 @@
               </ul>
             </div>
             <div class="project-media">
-              <!-- Replace this placeholder with an image or video later -->
-              <p>Project figures, simulation screenshots, or videos can be embedded here.  
-              For example: <code>&lt;img src="images/auv.png" alt="AUV simulation"&gt;</code></p>
+              <p>Project figures, simulation screenshots, or videos can be embedded here later.</p>
             </div>
           </div>
         </article>
 
         <article class="card">
           <div class="project-flex">
-            <div class="project-text">
+            <div>
               <div class="card-header">
                 <div>Hybrid Drivetrain Design &amp; Analysis · Team BlueStreak, NIT Rourkela</div>
                 <div>2021 – 2023</div>
@@ -453,7 +488,7 @@
 
         <article class="card">
           <div class="project-flex">
-            <div class="project-text">
+            <div>
               <div class="card-header">
                 <div>Autonomous Navigation &amp; Manipulation of AgriBot · e-Yantra Robotics Challenge</div>
                 <div>2021 – 2022</div>
@@ -471,7 +506,7 @@
       </div>
     </section>
 
-    <!-- COURSEWORK WITH DESCRIPTIONS -->
+    <!-- COURSEWORK -->
     <section id="coursework">
       <h2>Coursework</h2>
       <p class="muted">
@@ -514,11 +549,117 @@
         Formal publications are currently in preparation based on ongoing work in
         <em>Urban Air Mobility traffic management</em> and <em>aerial robotics navigation with 3D Gaussian Splatting</em>.
       </p>
-      <!-- Later you can replace this with a numbered list of papers. -->
     </section>
 
     <!-- NEWS -->
     <section id="news">
       <h2>News</h2>
       <ul class="news-list">
-        <li class="new
+        <li class="news-item"><span class="news-date">May 2025</span>Joined the Artificial Intelligence &amp; Robotics Lab at IISc Bangalore as a Research Project Associate.</li>
+        <li class="news-item"><span class="news-date">Jul 2024</span>Started as Assistant Engineering Manager at ITC Limited, working on Industry 4.0 sensor integration.</li>
+        <li class="news-item"><span class="news-date">Apr 2024</span>Team QO9D recognised as overall 2nd Runners-up in the Ohm Challenge on EV battery technology (Bajaj Auto &amp; Chetak Technology).</li>
+        <li class="news-item"><span class="news-date">Mar 2023</span>Team BlueStreak 10.0 awarded National Runners-up at ASME Hybrid HPV Challenge (EFx 2023) for the CDR presentation.</li>
+        <li class="news-item"><span class="news-date">Mar 2022</span>Led Team AB1214 to International 2nd Runners-up position in the Agribot theme at e-Yantra Robotics Competition, IIT Bombay.</li>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <h3>Programming &amp; software</h3>
+      <ul class="two-col-list">
+        <li>Python</li>
+        <li>C / C++</li>
+        <li>MATLAB &amp; Simulink</li>
+        <li>HTML / CSS</li>
+        <li>ROS, Webots</li>
+        <li>Linux &amp; Windows</li>
+        <li>ANSYS, OpenFOAM</li>
+        <li>SolidWorks, AutoCAD</li>
+      </ul>
+
+      <h3>Additional</h3>
+      <ul>
+        <li>Public speaking, technical presentations, and mentoring.</li>
+        <li>Fine arts and visual design.</li>
+      </ul>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section id="leadership">
+      <h2>Leadership &amp; volunteering</h2>
+      <div class="card-list">
+        <article class="card">
+          <div class="card-header">
+            <div>Vice President · ASME NIT Rourkela Chapter</div>
+            <div>2022 – 2023</div>
+          </div>
+          <ul>
+            <li>Led a diverse team of 50+ students, coordinating projects and national-level events.</li>
+            <li>During this tenure, the chapter received the ASME India Outstanding Community Engagement Award.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div>Student Mentor · Institute Counselling Services, NIT Rourkela</div>
+            <div>2022 – 2023</div>
+          </div>
+          <ul>
+            <li>Mentored first-year students on academic planning, mental well-being, and adapting to campus life.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div>Treasurer · Entrepreneurship Cell, NIT Rourkela</div>
+            <div>2020 – 2023</div>
+          </div>
+          <ul>
+            <li>Managed budgets and funding for events including the National Entrepreneurship Summit.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        For research or collaboration opportunities, please write to
+        <a href="mailto:anishamohapatra141001@gmail.com">anishamohapatra141001@gmail.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    // THEME TOGGLE: remembers preference in localStorage
+    const body = document.body;
+    const btn = document.getElementById("theme-toggle");
+
+    function setTheme(theme) {
+      body.classList.remove("theme-light", "theme-dark");
+      body.classList.add(theme);
+      localStorage.setItem("theme", theme);
+      btn.textContent = theme === "theme-dark" ? "🌙 Dark mode" : "☀️ Light mode";
+    }
+
+    // Initial theme: from localStorage or prefers-color-scheme
+    (function initTheme() {
+      const saved = localStorage.getItem("theme");
+      if (saved === "theme-light" || saved === "theme-dark") {
+        setTheme(saved);
+      } else {
+        const prefersDark = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(prefersDark ? "theme-dark" : "theme-light");
+      }
+    })();
+
+    btn.addEventListener("click", () => {
+      const current = body.classList.contains("theme-dark") ? "theme-dark" : "theme-light";
+      setTheme(current === "theme-dark" ? "theme-light" : "theme-dark");
+    });
+  </script>
+</body>
+</html>
