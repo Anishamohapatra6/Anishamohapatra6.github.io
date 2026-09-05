@@ -216,6 +216,7 @@
 
   /* ---------- Publications ---------- */
   .pub{ font-size:0.95rem; }
+  .pub + .pub{ margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--line); }
   .pub-title{ font-family:var(--serif); font-size:1.08rem; font-weight:600; margin-bottom:0.3rem; }
   .pub-meta{ color:var(--ink-soft); }
   .pub-status{
@@ -305,10 +306,10 @@
 <nav class="nav">
   <div class="nav-inner" id="nav-links">
     <a href="#about">About</a>
+    <a href="#publications">Publications</a>
     <a href="#news">News</a>
     <a href="#experience">Experience</a>
     <a href="#research">Research &amp; Projects</a>
-    <a href="#publications">Publications</a>
     <a href="#education">Education</a>
     <a href="#honors">Honors</a>
     <a href="#skills">Skills</a>
@@ -366,6 +367,21 @@
              this src back to "profile.jpg" for a more reliable, faster load. -->
         <img src="https://drive.google.com/thumbnail?id=17lMXa5tZZHSyQ_HusIH3ZwwiLGI0li9E&sz=w500" alt="Anisha Mohapatra" onerror="this.parentElement.style.display='none'">
       </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="pub-title">Vertiport Location Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger Behavior</div>
+      <div class="pub-meta">Anisha Mohapatra, Suresh Sundaram <span class="pub-status">Accepted &middot; IEEE Aerospace, Space and Defence Conference 2026</span></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Mathematical Modeling Algorithm for Multi-UAV Scheduling</div>
+      <div class="pub-meta">Anisha Mohapatra, Shridhar Velhal, Suresh Sundaram <span class="pub-status">In preparation</span></div>
     </div>
   </section>
 
@@ -530,9 +546,168 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications">
-    <h2>Publications</h2>
-    <div class="pub">
-      <div class="pub-title">Vertiport Location Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger Behavior</div>
-      <div class="pub-meta">Anisha Mohapatra, Suresh
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="edu-item">
+      <h3>University of Michigan, Ann Arbor</h3>
+      <div class="edu-degree">Master of Science in Robotics</div>
+      <div class="edu-detail">Aug 2026 – May 2028</div>
+    </div>
+
+    <div class="edu-item">
+      <h3>National Institute of Technology Rourkela</h3>
+      <div class="edu-degree">Bachelor of Technology in Mechanical Engineering &middot; CGPA 3.63/4.00</div>
+      <div class="edu-detail">Dec 2020 – Jun 2024</div>
+      <div class="edu-detail">B.Tech thesis: <em>Dynamics of Autonomous Underwater Vehicle (AUV) Considering Water Currents</em></div>
+    </div>
+
+    <ul class="cert-list">
+      <li>Robotics: Basic and Selected Advanced Concepts — IISc Bangalore, NPTEL</li>
+      <li>Finite Element Analysis I &amp; II — IIT Kanpur, NPTEL</li>
+      <li>Machine Dynamics with MATLAB — RWTHx, Aachen University (edX)</li>
+      <li>Control Design Onramp with Simulink — MathWorks</li>
+      <li>Diploma in Fine Arts — Surnandan Bharati</li>
+    </ul>
+  </section>
+
+  <!-- HONORS -->
+  <section id="honors">
+    <h2>Honors &amp; Awards</h2>
+    <ul class="honor-list">
+      <li><span>2nd Runners-up &amp; Campus Winner among 1,500+ teams for an EV battery algorithm at the Ohm Challenge, Bajaj Auto Technology Limited</span><span class="honor-year">Apr 2024</span></li>
+      <li><span>Semi-finalist, POC round qualifier at the 6th Techgium Competition (L&amp;T Technology Services) for an active torque-vectoring system using predictive error-based control</span><span class="honor-year">Apr 2023</span></li>
+      <li><span>Winner, G20 Elocution Competition — NIT Rourkela &amp; Eastern Zone G20 Committee, for a speech on achieving global sustainability goals</span><span class="honor-year">Apr 2023</span></li>
+      <li><span>National Runners-up, ASME Hybrid Human Powered Vehicle Challenge (EFx 2023) — Critical Design Report presentation, Team BlueStreak 10.0</span><span class="honor-year">Mar 2023</span></li>
+      <li><span>National Runners-up among 100+ teams at DecodEV (WUElev8, IIITD &amp; TelioEV) for a smart AI-based thermal-management system to reduce EV fires</span><span class="honor-year">Sep 2022</span></li>
+      <li><span>Semi-finalist, national-level Flipkart Grid warehouse robotics competition, for multi-agent warehouse planning robots</span><span class="honor-year">Aug 2022</span></li>
+      <li><span>World rank 2nd (CDR Presentation) &amp; World rank 3rd (Innovation Challenge) at ASME eHPVC, Team BlueStreak 9.0</span><span class="honor-year">Mar 2022</span></li>
+      <li><span>International 2nd Runners-up, Agribot theme, e-Yantra Robotics Competition (IIT Bombay &amp; MHRD) — as team lead, Team AB1214</span><span class="honor-year">Mar 2022</span></li>
+    </ul>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Programming Languages</div>
+      <div class="chip-row">
+        <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">C++</span><span class="chip">C</span><span class="chip">HTML/CSS</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Tools &amp; Frameworks</div>
+      <div class="chip-row">
+        <span class="chip">ROS2</span><span class="chip">ROS1</span><span class="chip">Gazebo</span><span class="chip">Webots</span><span class="chip">Simulink</span><span class="chip">Gurobi Optimizer</span><span class="chip">Ansys</span><span class="chip">SolidWorks</span><span class="chip">AutoCAD</span><span class="chip">DuctSizer</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Operating Systems</div>
+      <div class="chip-row">
+        <span class="chip">Linux</span><span class="chip">Windows</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Extracurricular</div>
+      <div class="chip-row">
+        <span class="chip">Fine Arts</span><span class="chip">Public Speaking</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership">
+    <h2>Leadership &amp; Volunteering</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>Vice President</h3>
+          <div class="entry-org">American Society of Mechanical Engineers (ASME), NIT Rourkela Chapter</div>
+        </div>
+        <div class="entry-date">May 2022 – Apr 2023</div>
+      </div>
+      <ul>
+        <li>Led a team of 50+ students from interdisciplinary branches and organized two national-level events.</li>
+        <li>Chapter received the ASME India Outstanding Community Engagement Award during my tenure.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>Student Mentor</h3>
+          <div class="entry-org">Institute Counselling Services, NIT Rourkela</div>
+        </div>
+        <div class="entry-date">Aug 2022 – Jul 2023</div>
+      </div>
+      <ul>
+        <li>Mentored around 10 first-year students on course choices, study strategies, and adapting to the academic workload.</li>
+        <li>Supported mentees with well-being and socio-cultural adjustment, connecting them to professional support resources when needed.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>Treasurer</h3>
+          <div class="entry-org">Entrepreneurship Cell, NIT Rourkela</div>
+        </div>
+        <div class="entry-date">Aug 2022 – Jul 2023</div>
+      </div>
+      <ul>
+        <li>Coordinated funding for club events, including the National Entrepreneurship Summit (NES).</li>
+        <li>Managed budgeting, sponsorship outreach (INR 5L+), and expense tracking, ensuring transparent use of funds.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p style="margin-bottom:1.1rem;">Always happy to talk robotics, optimization, or possible collaborations — reach out through any of these.</p>
+      <div class="links-row">
+        <a href="mailto:anishamo@umich.edu">anishamo@umich.edu</a>
+        <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Anishamohapatra6" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://drive.google.com/file/d/1sCm9ns2xbS00eegsw1lNeydwAz0iNJ-Q/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Anisha Mohapatra.</footer>
+
+<script>
+  // Highlight the nav link for whichever section is currently in view.
+  (function(){
+    var links = Array.from(document.querySelectorAll('#nav-links a'));
+    var sections = links
+      .map(function(link){ return document.querySelector(link.getAttribute('href')); })
+      .filter(Boolean);
+
+    if (!('IntersectionObserver' in window) || sections.length === 0) return;
+
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute('id');
+        links.forEach(function(link){
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(function(section){ observer.observe(section); });
+  })();
+</script>
+
+</body>
+</html>
