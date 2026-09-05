@@ -67,7 +67,7 @@
     text-decoration:none;
     white-space:nowrap;
   }
-  .nav-inner a.active,
+  .nav-inner a.active{ color:var(--accent); font-weight:500; }
   .nav-inner a:hover{ color:var(--ink); }
 
   main{ max-width:var(--maxw); margin:0 auto; padding:0 1.5rem 5rem; }
@@ -76,11 +76,14 @@
   section:first-of-type{ padding-top:2.6rem; }
 
   h2{
+    display:inline-block;
     font-family:var(--serif);
     font-weight:600;
     font-size:1.5rem;
     margin:0 0 1.35rem;
+    padding-bottom:0.3rem;
     color:var(--ink);
+    border-bottom:2px solid var(--accent);
   }
 
   h3{
@@ -108,18 +111,19 @@
     font-size:2.15rem;
     margin:0 0 0.15rem;
     letter-spacing:-0.01em;
+    color:var(--accent);
   }
   .role-line{
     font-size:1.02rem;
     color:var(--ink-soft);
     margin-bottom:1.1rem;
   }
-  .portrait{ flex:0 0 108px; }
+  .portrait{ flex:0 0 124px; }
   .portrait img{
-    width:108px; height:108px;
+    width:124px; height:124px;
     object-fit:cover;
     border-radius:50%;
-    border:1px solid var(--line);
+    border:3px solid var(--accent-soft);
     display:block;
   }
   .links-row{
@@ -289,7 +293,7 @@
   @media (max-width:600px){
     .header{ flex-direction:column-reverse; gap:1rem; }
     .portrait{ flex:0 0 auto; }
-    .portrait img{ width:76px; height:76px; }
+    .portrait img{ width:88px; height:88px; }
     .header-text h1{ font-size:1.8rem; }
     .entry-date, .news-date{ font-size:0.72rem; }
     .honor-list li{ flex-direction:column; gap:0.15rem; }
@@ -322,32 +326,45 @@
         <h1>Anisha Mohapatra</h1>
         <div class="role-line">MS student in Robotics, University of Michigan</div>
 
-        <p>I'm a Master's student in Robotics at the University of Michigan, Ann Arbor,
-          working at the intersection of optimization, controls, and aerial robotics.
-          Before Michigan, I spent a year as a Research Project Associate at the AI &amp;
-          Robotics Lab, IISc Bangalore, building planning and scheduling frameworks for
-          Urban Air Mobility, and worked in industry at ITC Limited leading factory
-          automation projects. I did my undergraduate degree in Mechanical Engineering
-          at NIT Rourkela, with a thesis on the dynamics of autonomous underwater
-          vehicles under ocean currents.</p>
+        <p>I'm a Master's student in Robotics at the University of Michigan, Ann Arbor.
+          My research interests are in controls, multi-agent systems, optimization, and
+          robot learning.</p>
 
-        <p class="lede">My research interests sit between algorithm design and
-          hardware: optimization for multi-agent and aerial systems, robot perception,
-          and mechatronic design. Outside of research, I train in fine arts and enjoy
-          public speaking.</p>
+        <p>During the summer of 2026, before starting at Michigan, I worked remotely
+          with Prof. Max Simchowitz at Carnegie Mellon University on the DexterLab
+          project, which introduced me to robotics research in learning and
+          manipulation. Before that, I spent a year as a Research Project Associate at
+          the AI &amp; Robotics Lab, IISc Bangalore, under Prof. Suresh Sundaram, working
+          on optimization-based planning for Urban Air Mobility — vertiport siting,
+          airspace design, and multi-eVTOL scheduling — through mathematical modeling
+          and simulation. This work led to an accepted manuscript, "Vertiport Location
+          Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger
+          Behavior," at the IEEE Aerospace, Space and Defence Conference 2026, and
+          another, "Mathematical Modeling Algorithm for Multi-UAV Scheduling" (with
+          Shridhar Velhal, LTU Sweden, and Prof. Suresh Sundaram), currently in
+          preparation.</p>
+
+        <p class="lede">I completed my B.Tech in Mechanical Engineering at NIT Rourkela,
+          where my thesis focused on nonlinear 6-DOF modeling of an autonomous
+          underwater vehicle in MATLAB/Simulink for navigation and control under
+          ocean-current disturbances. I also worked on ROS-based navigation,
+          manipulation, and control for an autonomous agricultural robot through the
+          e-Yantra Robotics Challenge. Outside of research, I train in fine arts and
+          enjoy public speaking.</p>
 
         <div class="links-row">
           <a href="mailto:anishamo@umich.edu">Email</a>
           <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/Anishamohapatra6" target="_blank" rel="noopener">GitHub</a>
-          <a href="Resume_Anisha_Mohapatra_UofM.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+          <a href="https://drive.google.com/file/d/1sCm9ns2xbS00eegsw1lNeydwAz0iNJ-Q/view?usp=sharing" target="_blank" rel="noopener">CV (PDF)</a>
         </div>
       </div>
 
       <div class="portrait">
-        <!-- Add a "profile.jpg" next to this file to show a photo here.
-             The image hides itself automatically if the file is missing. -->
-        <img src="profile.jpg" alt="Anisha Mohapatra" onerror="this.parentElement.style.display='none'">
+        <!-- Photo served from Google Drive. If you'd rather host it yourself,
+             download the file, add it to the repo as profile.jpg, and change
+             this src back to "profile.jpg" for a more reliable, faster load. -->
+        <img src="https://drive.google.com/thumbnail?id=17lMXa5tZZHSyQ_HusIH3ZwwiLGI0li9E&sz=w500" alt="Anisha Mohapatra" onerror="this.parentElement.style.display='none'">
       </div>
     </div>
   </section>
@@ -357,7 +374,8 @@
     <h2>News</h2>
     <ul class="news-list">
       <li><span class="news-date">Aug 2026</span><span>Started my MS in Robotics at the University of Michigan, Ann Arbor.</span></li>
-      <li><span class="news-date">Aug 2026</span><span>"Vertiport Location Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger Behavior" accepted at the IEEE SPACE, Aerospace and Defence Conference.</span></li>
+      <li><span class="news-date">Aug 2026</span><span>"Vertiport Location Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger Behavior" accepted at the IEEE Aerospace, Space and Defence Conference.</span></li>
+      <li><span class="news-date">Summer 2026</span><span>Worked remotely with Prof. Max Simchowitz at Carnegie Mellon University on the DexterLab project.</span></li>
       <li><span class="news-date">May 2025</span><span>Joined the AI &amp; Robotics Lab at IISc Bangalore as a Research Project Associate, under Prof. Suresh Sundaram.</span></li>
       <li><span class="news-date">Jul 2024</span><span>Started as Assistant Engineering Manager at ITC Limited, leading Industry 4.0 automation work.</span></li>
       <li><span class="news-date">Apr 2024</span><span>Team QO9D placed 2nd runner-up and campus winner among 1,500+ teams at the Ohm Challenge on EV battery technology, hosted by Bajaj Auto.</span></li>
@@ -367,6 +385,20 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <h3>Research Intern (remote)</h3>
+          <div class="entry-org">DexterLab, Carnegie Mellon University &middot; <em>advised by Prof. Max Simchowitz</em></div>
+        </div>
+        <div class="entry-date">Summer 2026</div>
+      </div>
+      <ul>
+        <li>Contributed remotely to the DexterLab project, gaining hands-on exposure to robotics research in learning and manipulation.</li>
+      </ul>
+      <div class="tags"><span class="tag">Robot Learning</span><span class="tag">Manipulation</span></div>
+    </div>
 
     <div class="entry">
       <div class="entry-head">
@@ -503,175 +535,4 @@
     <h2>Publications</h2>
     <div class="pub">
       <div class="pub-title">Vertiport Location Optimisation for Urban Air Mobility under Time-Varying Traffic and Passenger Behavior</div>
-      <div class="pub-meta">Anisha Mohapatra, Suresh Sundaram — IEEE SPACE, Aerospace and Defence Conference<span class="pub-status">accepted, Aug 2026</span></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <h2>Education</h2>
-
-    <div class="edu-item">
-      <div class="entry-head">
-        <h3>University of Michigan, Ann Arbor</h3>
-        <div class="entry-date">Aug 2026 – May 2028</div>
-      </div>
-      <div class="edu-degree">M.S. in Robotics</div>
-    </div>
-
-    <div class="edu-item">
-      <div class="entry-head">
-        <h3>National Institute of Technology Rourkela</h3>
-        <div class="entry-date">Dec 2020 – Jun 2024</div>
-      </div>
-      <div class="edu-degree">B.Tech in Mechanical Engineering</div>
-      <div class="edu-detail">Cumulative CGPA: 3.63 / 4.00 &middot; Thesis: Dynamics of an Autonomous Underwater Vehicle Under Ocean Currents</div>
-    </div>
-
-    <div class="sub-heading" style="margin-top:1.9rem;">CERTIFICATIONS</div>
-    <ul class="cert-list">
-      <li>Robotics: Basic and Selected Advanced Concepts — IISc Bangalore, NPTEL</li>
-      <li>Finite Element Analysis I &amp; II — IIT Kanpur, NPTEL</li>
-      <li>Machine Dynamics with MATLAB — RWTHx, Aachen University (edX)</li>
-      <li>Control Design Onramp with Simulink — MathWorks</li>
-      <li>Diploma in Fine Arts — Surnandan Bharati</li>
-    </ul>
-  </section>
-
-  <!-- HONORS -->
-  <section id="honors">
-    <h2>Honors &amp; Awards</h2>
-    <ul class="honor-list">
-      <li><span>2nd Runner-up &amp; Campus Winner, Ohm Challenge (Bajaj Auto) — EV battery algorithm, among 1,500+ teams</span><span class="honor-year">2024</span></li>
-      <li><span>Semi-finalist, Techgium (L&amp;T Technology Services) — active torque-vectoring control system</span><span class="honor-year">2023</span></li>
-      <li><span>Winner, G20 Elocution Competition, NIT Rourkela</span><span class="honor-year">2023</span></li>
-      <li><span>National Runners-up, ASME Hybrid HPV Challenge (EFx 2023) — CDR presentation</span><span class="honor-year">2023</span></li>
-      <li><span>National Runners-up, DecodEV Hackathon — AI-based EV thermal management</span><span class="honor-year">2022</span></li>
-      <li><span>Semi-finalist, Flipkart Grid National Robotics Competition — warehouse robotics</span><span class="honor-year">2022</span></li>
-      <li><span>World Rank 2 (CDR) &amp; Rank 3 (Innovation), ASME eHPVC</span><span class="honor-year">2022</span></li>
-      <li><span>International 2nd Runner-up, e-Yantra Robotics Competition (IIT Bombay / MHRD) — team lead</span><span class="honor-year">2022</span></li>
-    </ul>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-
-    <div class="skill-group">
-      <div class="skill-label">Languages</div>
-      <div class="chip-row">
-        <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">C++</span><span class="chip">C</span><span class="chip">HTML/CSS</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-label">Tools &amp; frameworks</div>
-      <div class="chip-row">
-        <span class="chip">ROS / ROS2</span><span class="chip">Gazebo</span><span class="chip">Webots</span><span class="chip">Simulink</span><span class="chip">Gurobi</span><span class="chip">ANSYS</span><span class="chip">SolidWorks</span><span class="chip">AutoCAD</span><span class="chip">DuctSizer</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-label">Operating systems</div>
-      <div class="chip-row">
-        <span class="chip">Linux</span><span class="chip">Windows</span>
-      </div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-label">Beyond engineering</div>
-      <div class="chip-row">
-        <span class="chip">Fine arts</span><span class="chip">Public speaking</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERSHIP -->
-  <section id="leadership">
-    <h2>Leadership &amp; Mentoring</h2>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div>
-          <h3>Vice President</h3>
-          <div class="entry-org">ASME NIT Rourkela Chapter</div>
-        </div>
-        <div class="entry-date">2022 – 2023</div>
-      </div>
-      <ul>
-        <li>Led a team of 50+ students across interdisciplinary branches, organizing two national-level events.</li>
-        <li>The chapter received the ASME India Outstanding Community Engagement Award during this tenure.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div>
-          <h3>Student Mentor</h3>
-          <div class="entry-org">Institute Counselling Services, NIT Rourkela</div>
-        </div>
-        <div class="entry-date">2022 – 2023</div>
-      </div>
-      <ul>
-        <li>Mentored around 10 first-year students each year on course choices, study strategy, and adapting to campus life.</li>
-        <li>Supported mentees' well-being and socio-cultural adjustment, connecting them to professional resources when needed.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <div>
-          <h3>Treasurer</h3>
-          <div class="entry-org">Entrepreneurship Cell, NIT Rourkela</div>
-        </div>
-        <div class="entry-date">2020 – 2023</div>
-      </div>
-      <ul>
-        <li>Managed budgeting, sponsorship outreach (₹5L+), and expense tracking for club initiatives, including the National Entrepreneurship Summit.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p style="margin-bottom:0.5rem;">For research, collaboration, or opportunities, feel free to reach out.</p>
-      <div class="links-row">
-        <a href="mailto:anishamo@umich.edu">anishamo@umich.edu</a>
-        <a href="https://www.linkedin.com/in/anisha-mohapatra-8ba264178/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Anishamohapatra6" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 Anisha Mohapatra. Built with plain HTML &amp; CSS, hosted on GitHub Pages.
-</footer>
-
-<script>
-  // Subtle active-section highlight in the nav — no other motion on the page.
-  const links = document.querySelectorAll('#nav-links a');
-  const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
-  const byId = Object.fromEntries(links.length ? [...links].map(a => [a.getAttribute('href').slice(1), a]) : []);
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const link = byId[entry.target.id];
-        if (!link) return;
-        if (entry.isIntersecting) {
-          links.forEach(a => a.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-    sections.forEach(s => s && observer.observe(s));
-  }
-</script>
-
-</body>
-</html>
+      <div class="pub-meta">Anisha Mohapatra, Suresh
